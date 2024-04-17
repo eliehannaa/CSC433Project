@@ -16,7 +16,7 @@ function loginUser($username, $password) {
     if(isset($userData[$username])) {
         
         if($password === $userData[$username]['password']) {
-                $_SESSION["username"]=$username;
+                $_SESSION["name"]= $userData[$username]['full_name'];
                 header("location:../pages/aboutMe.php");
         } else {
             $_SESSION["err_message"]='Incorrect password';

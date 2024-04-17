@@ -1,10 +1,10 @@
 <?php require_once("../components/footer.php");?>
 <?php require_once("../components/header.php");
 session_start();
-if(!isset($_SESSION["username"])){
+if(!isset($_SESSION["name"])){
     header("location:../index.php");
 }
-$un=$_SESSION["username"];
+$un=$_SESSION["name"];
 ?>
 <html>
 

@@ -1,14 +1,26 @@
 {
     "e": {
-        "full_name": "e",
+        "full_name": "ely",
         "password": "e",
         "sex": "male",
         "dob": "2024-04-09"
     },
     "r": {
-        "full_name": "r",
+        "full_name": "ramy",
         "password": "r",
         "sex": "male",
         "dob": "2024-04-14"
+    },
+    "pp": {
+        "full_name": "patrick",
+        "password": "pp",
+        "sex": "male",
+        "dob": "2024-04-08"
+    },
+    "j": {
+        "full_name": "joe",
+        "password": "j",
+        "sex": "male",
+        "dob": "2023-12-13"
     }
 }
