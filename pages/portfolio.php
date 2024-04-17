@@ -14,7 +14,7 @@ function ReadImages(){
   echo "<div style='vertical-align: middle'>";
   foreach($pieces as $piece){
     echo "<div class='thumbnail-frame'>";
-    echo "<a href='../pages/projects/$piece.html'><img src='../images/$piece.jpg'/></a>";
+    echo "<a href='../pages/projects/$piece.php'><img src='../images/$piece.jpg'/></a>";
     echo "<p>$piece</p>";
     echo "</div>";
   }
