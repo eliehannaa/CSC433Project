@@ -19,6 +19,14 @@ session_destroy();
         padding: 0;
     }
 
+    .sign-up {
+        display: block;
+        text-align: center;
+        margin-top: 10px;
+        color: #007bff;
+        text-decoration: none;
+    }
+
     h2 {
         text-align: center;
         color: #333;
@@ -89,6 +97,7 @@ session_destroy();
         <input type="date" name="dob" required><br>
         <input type="submit" name="signup" value="Signup">
     </form>
+    <a href="../index.php" class="sign-up">Login</a>
 
 
 
