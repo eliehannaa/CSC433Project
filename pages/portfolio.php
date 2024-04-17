@@ -1,5 +1,11 @@
 <?php require_once("../components/footer.php");?>
-<?php require_once("../components/header.php");?>
+<?php require_once("../components/header.php");
+session_start();
+if(!isset($_SESSION["username"])){
+    header("location:../index.php");
+}
+$un=$_SESSION["username"];
+?>
 <?php
 function ReadImages(){
   $myfile = fopen("../extra/images.txt", "r") or die("Unable to open file!");
@@ -23,9 +29,12 @@ function ReadImages(){
 </head>
 
 <body>
-    <?php DisplayHeader(); ?>
+    <?php DisplayHeader($un); ?>
     <div class="content">
-        <h2>My Projects:</h2>
+        <div style="display: flex; justify-content: space-between;">
+            <h2>My Projects:</h2>
+            <h3 style="color: red;">Hello <?php echo $un;?></h3>
+        </div>
         <?php ReadImages() ?>
     </div>
     <?php DisplayFooter(); ?>

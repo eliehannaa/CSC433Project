@@ -1,4 +1,5 @@
 <?php
+session_start();
 $loginResult = loginUser($_POST['username'], $_POST['password']);
 echo $loginResult;
 
@@ -15,16 +16,14 @@ function loginUser($username, $password) {
     if(isset($userData[$username])) {
         
         if($password === $userData[$username]['password']) {
-                // session_start();
-                // $_SESSION["username"]=$un;
-                echo '<script>alert("Login successful")</script>';
+                $_SESSION["username"]=$username;
                 header("location:../pages/aboutMe.php");
         } else {
-            echo '<script>alert("Incorrect password")</script>';
-            header("location:../index.html");
+            $_SESSION["err_message"]='Incorrect password';
+            header("location:../index.php");
         }
     } else {
-        echo "<script>alert('User not found! Crearte an account')</script>";
+        $_SESSION["err_message"]='User not found! Create an account';
         header("location:../pages/signup.php");
     }
 }

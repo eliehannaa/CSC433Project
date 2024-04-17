@@ -1,15 +1,15 @@
 <?php
-session_start();
-if(isset($_SESSION["err_message"])){
+  session_start();
+  if(isset($_SESSION["err_message"])){
     echo '<script>alert("'.$_SESSION["err_message"].'")</script>';
 }
-session_unset();
-session_destroy();
+  session_unset();
+  session_destroy();
 ?>
 <html>
 
 <head>
-    <title>User Signup</title>
+    <title>User Login</title>
     <style>
     body {
         font-family: Arial, sans-serif;
@@ -24,6 +24,14 @@ session_destroy();
         color: #333;
     }
 
+    .sign-up {
+        display: block;
+        text-align: center;
+        margin-top: 10px;
+        color: #007bff;
+        text-decoration: none;
+    }
+
     form {
         width: 300px;
         margin: 0 auto;
@@ -34,19 +42,13 @@ session_destroy();
     }
 
     input[type="text"],
-    input[type="password"],
-    select,
-    input[type="date"] {
+    input[type="password"] {
         width: 100%;
         padding: 10px;
         margin-bottom: 15px;
         border: 1px solid #ccc;
         border-radius: 3px;
         box-sizing: border-box;
-    }
-
-    select {
-        height: 40px;
     }
 
     input[type="submit"] {
@@ -65,9 +67,7 @@ session_destroy();
     }
 
     input[type="text"]:focus,
-    input[type="password"]:focus,
-    select:focus,
-    input[type="date"]:focus {
+    input[type="password"]:focus {
         outline: none;
         border-color: #007bff;
         box-shadow: 0 0 5px #007bff;
@@ -76,22 +76,13 @@ session_destroy();
 </head>
 
 <body>
-    <h2>Signup</h2>
-    <form action="../BE/signup.php" method="post">
-        <input type="text" name="username" placeholder="Username" required><br>
-        <input type="text" name="full_name" placeholder="Full Name" required><br>
-        <input type="password" name="password" placeholder="Password" required><br>
-        <select name="sex" required>
-            <option value="">Select Sex</option>
-            <option value="male">Male</option>
-            <option value="female">Female</option>
-        </select><br>
-        <input type="date" name="dob" required><br>
-        <input type="submit" name="signup" value="Signup">
+    <h2>Login</h2>
+    <form action="BE/login.php" method="post">
+        <input type="text" name="username" placeholder="Username" required /><br />
+        <input type="password" name="password" placeholder="Password" required /><br />
+        <input type="submit" name="login" value="Login" />
     </form>
-
-
-
 </body>
+<a class="sign-up" href="./pages/signup.php">Sign Up</a>
 
 </html>

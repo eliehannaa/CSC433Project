@@ -1,4 +1,6 @@
 <?php
+session_start();
+
 function loadUserData() {
     $userData = file_get_contents('users.json');
     return json_decode($userData, true);
@@ -16,7 +18,7 @@ function signupUser($username, $fullName, $password, $sex, $dob) {
     
     
     if(isset($userData[$username])) {
-        echo '<script>alert("Username already exists")</script>';
+        $_SESSION["err_message"]='Username already exists';
         header("location:../pages/signup.php");
     }
     
@@ -30,7 +32,6 @@ function signupUser($username, $fullName, $password, $sex, $dob) {
     
     
     saveUserData($userData);
-    echo '<script>alert("User signed up successfully")</script>';
 }
 
 
